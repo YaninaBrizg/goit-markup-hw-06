@@ -138,7 +138,7 @@ ul {
   align-items: center;
 }
 .nav-list {
-  display: flex;
+  display: none;
   gap: 40px;
 }
 
@@ -181,13 +181,123 @@ ul {
   letter-spacing: 0.02em;
 }
 .adress-list {
-  display: flex;
+  display: none;
   gap: 40px;
 }
 .adress-link {
   padding: 24px 0;
 }
 
+@media screen and (min-width: 768px) {
+  .nav-list {
+    display: flex;
+    gap: 40px;
+  }
+  .adress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .menu-open-btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .nav-list {
+    display: flex;
+    gap: 40px;
+  }
+  .adress-list {
+    display: flex;
+    gap: 40px;
+  }
+  .menu-open-btn {
+    display: none;
+  }
+}
+
+.menu-open-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.menu-mob-icon {
+}
+
+.mob-menu {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+}
+
+.menu-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: transparent;
+
+  padding: 0;
+  width: 24px;
+  height: 24px;
+
+  margin-left: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.mob-menu-link {
+  color: var(--navyblue);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.mob-menu-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.mob-adress {
+}
+
+.mob-adress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mob-adress-link {
+  font-style: normal;
+  color: var(--slate);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.mob-social-list {
+  display: flex;
+  justify-content: space-between;
+}
 /**
   |============================
   | hero
@@ -670,10 +780,15 @@ ul {
 
 .footer-container {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  flex-direction: column;
+  gap: 42px;
 }
+
 .footer-logo-box {
-  margin-right: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo-footer {
@@ -689,7 +804,9 @@ ul {
 }
 
 .social-box {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .social-title {
@@ -710,8 +827,11 @@ ul {
 }
 
 .email-box {
-  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .email-title {
   color: var(--white);
   font-weight: 500;
@@ -721,10 +841,13 @@ ul {
 }
 .email-form {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  margin-bottom: 16px;
 }
 .label-email {
+  margin-bottom: 16px;
 }
+
 .input-email {
   width: 264px;
   height: 40px;
@@ -765,6 +888,63 @@ ul {
   fill: var(--white);
 }
 
+@media screen and (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .footer-logo-box {
+    margin-right: 16px;
+    align-items: flex-start;
+  }
+  .social-box {
+    align-items: flex-start;
+  }
+  .email-box {
+    align-items: flex-start;
+    gap: 0;
+  }
+  .email-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .label-email {
+    margin-right: 16px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+  }
+  .footer-logo-box {
+    margin-right: 60px;
+  }
+  .social-box {
+    display: inline-block;
+  }
+  .email-box {
+    align-items: flex-start;
+    margin-left: 40px;
+  }
+  .email-form {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+  .email-title {
+    margin-bottom: 8px;
+  }
+  .label-email {
+    margin-bottom: 0;
+  }
+}
+
 /**
   |============================
   | Modal
@@ -791,11 +971,11 @@ ul {
 }
 
 .modal {
-  width: 408px;
-  min-height: 584px;
+  width: 288px;
+  min-height: 623px;
   border-radius: 4px;
   background: #fcfcfc;
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 16px 16px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
@@ -804,6 +984,14 @@ ul {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 408px;
+    min-height: 584px;
+    padding: 72px 24px 24px 24px;
+  }
 }
 
 .modal-button {

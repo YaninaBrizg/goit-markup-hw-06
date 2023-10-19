@@ -42,7 +42,8 @@
             </li>
           </ul>
         </nav>
-        <address class="adress">
+
+        <adress class="adress">
           <ul class="adress-list list">
             <li>
               <a class="link adress-link" href="mailto:info@devstudio.com"
@@ -55,7 +56,101 @@
               >
             </li>
           </ul>
+        </adress>
+
+        <button class="menu-open-btn" type="button">
+          <svg class="mob-menu-icon" width="24" height="24">
+            <use href="./images/icons.svg#icon-burger-menu"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mob-menu">
+        <button class="menu-close-btn button" type="button">
+          <svg class="modal-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <ul class="mob-menu-list list">
+          <li class="mob-menu-item">
+            <a class="mob-menu-link link current" href="./index.html">Studio</a>
+          </li>
+          <li class="mob-menu-item">
+            <a class="mob-menu-link link" href="">Portfolio</a>
+          </li>
+          <li class="mob-menu-item">
+            <a class="mob-menu-link link" href="">Contacts</a>
+          </li>
+        </ul>
+
+        <address class="mob-adress">
+          <ul class="mob-adress-list list">
+            <li>
+              <a class="link mob-adress-link" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+            <li>
+              <a class="link mob-adress-link" href="tel:+110001111111"
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+          </ul>
         </address>
+
+        <div class="social-box">
+          <ul class="mob-social-list list">
+            <li class="social-item">
+              <a
+                class="social-link link"
+                href="http://instagram.com"
+                target="_blank"
+                rel="noopener no-referrer"
+              >
+                <svg class="social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-item">
+              <a
+                class="social-link link"
+                href="http://twitter.com"
+                target="_blank"
+                rel="noopener no-referrer"
+              >
+                <svg class="social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-item">
+              <a
+                class="social-link link"
+                href="http://facebook.com"
+                target="_blank"
+                rel="noopener no-referrer"
+              >
+                <svg class="social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-item">
+              <a
+                class="social-link link"
+                href="http://linkedin.com"
+                target="_blank"
+                rel="noopener no-referrer"
+              >
+                <svg class="social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 
@@ -134,6 +229,7 @@
           <ul class="list team-set">
             <li class="team-list team-set-item">
               <img
+                srcset="./images/team/img3.jpg 1x, ./images/team/img3-2x.jpg 2x"
                 src="./images/team/img3.jpg"
                 alt="Mark Guerrero"
                 width="264"
@@ -197,6 +293,7 @@
 
             <li class="team-list team-set-item">
               <img
+                srcset="./images/team/img2.jpg 1x, ./images/team/img2-2x.jpg 2x"
                 src="./images/team/img2.jpg"
                 alt="Tom Ford"
                 width="264"
@@ -260,6 +357,7 @@
 
             <li class="team-list team-set-item">
               <img
+                srcset="./images/team/img1.jpg 1x, ./images/team/img1-2x.jpg 2x"
                 src="./images/team/img1.jpg"
                 alt="Camila Garcia"
                 width="264"
@@ -323,6 +421,7 @@
 
             <li class="team-list team-set-item">
               <img
+                srcset="./images/team/img.jpg 1x, ./images/team/img-2x.jpg 2x"
                 src="./images/team/img.jpg"
                 alt="Daniel Wilson"
                 width="264"
@@ -394,11 +493,35 @@
           <ul class="project-list list">
             <li class="project-item">
               <div class="box">
-                <img
-                  src="./images/projects/raw1-1.jpg"
-                  alt="Bank app"
-                  width="360"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/projects/raw1-1.jpg    1x,
+                      ./images/projects/raw1-1-2x.jpg 2x
+                    "
+                    media="(min-width: 1158px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw1-1-tab-1x.jpg 1x,
+                      ./images/projects/raw1-1-tab-2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw1-1-mob-1x.jpg 1x,
+                      ./images/projects/raw1-1-mob-2x.jpg 2x
+                    "
+                    media="(max-width: 768px)"
+                  />
+                  <img
+                    src="./images/projects/raw1-1.jpg"
+                    alt="Bank app"
+                    width="360"
+                  />
+                </picture>
+
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -416,11 +539,35 @@
 
             <li class="project-item">
               <div class="box">
-                <img
-                  src="./images/projects/raw1-2.jpg"
-                  alt="Cachless payment"
-                  width="360"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/projects/raw1-2.jpg    1x,
+                      ./images/projects/raw1-2-2x.jpg 2x
+                    "
+                    media="(min-width: 1158px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw1-2-tab-1x.jpg 1x,
+                      ./images/projects/raw1-2-tab-2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw1-2-mob-1x.jpg 1x,
+                      ./images/projects/raw1-2-mob-2x.jpg 2x
+                    "
+                    media="(max-width: 768px)"
+                  />
+                  <img
+                    src="./images/projects/raw1-2.jpg"
+                    alt="Cachless payment"
+                    width="360"
+                  />
+                </picture>
+
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -436,11 +583,34 @@
 
             <li class="project-item">
               <div class="box">
-                <img
-                  src="./images/projects/raw1-3.jpg"
-                  alt="Meditation App"
-                  width="360"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/projects/raw1-3.jpg    1x,
+                      ./images/projects/raw1-3-2x.jpg 2x
+                    "
+                    media="(min-width: 1158px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw1-3-tab-1x.jpg 1x,
+                      ./images/projects/raw1-3-tab-2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw1-3-mob-1x.jpg 1x,
+                      ./images/projects/raw1-3-mob-2x.jpg 2x
+                    "
+                    media="(max-width: 768px)"
+                  />
+                  <img
+                    src="./images/projects/raw1-3.jpg"
+                    alt="Meditation App"
+                    width="360"
+                  />
+                </picture>
 
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -456,11 +626,34 @@
 
             <li class="project-item">
               <div class="box">
-                <img
-                  src="./images/projects/raw2-1.jpg"
-                  alt="Taxi Service"
-                  width="360"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/projects/raw2-1.jpg    1x,
+                      ./images/projects/raw2-1-2x.jpg 2x
+                    "
+                    media="(min-width: 1158px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw2-1-tab-1x.jpg 1x,
+                      ./images/projects/raw2-1-tab-2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw2-1-mob-1x.jpg 1x,
+                      ./images/projects/raw2-1-mob-2x.jpg 2x
+                    "
+                    media="(max-width: 768px)"
+                  />
+                  <img
+                    src="./images/projects/raw2-1.jpg"
+                    alt="Taxi Service"
+                    width="360"
+                  />
+                </picture>
 
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -476,11 +669,34 @@
 
             <li class="project-item">
               <div class="box">
-                <img
-                  src="./images/projects/raw2-2.jpg"
-                  alt="Screen Illustrations"
-                  width="360"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/projects/raw2-2.jpg    1x,
+                      ./images/projects/raw2-2-2x.jpg 2x
+                    "
+                    media="(min-width: 1158px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw2-2-tab-1x.jpg 1x,
+                      ./images/projects/raw2-2-tab-2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw2-2-mob-1x.jpg 1x,
+                      ./images/projects/raw2-2-mob-2x.jpg 2x
+                    "
+                    media="(max-width: 768px)"
+                  />
+                  <img
+                    src="./images/projects/raw2-2.jpg"
+                    alt="Screen Illustrations"
+                    width="360"
+                  />
+                </picture>
 
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -496,11 +712,34 @@
 
             <li class="project-item">
               <div class="box">
-                <img
-                  src="./images/projects/raw2-3.jpg"
-                  alt="Online Courses"
-                  width="360"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/projects/raw2-3.jpg    1x,
+                      ./images/projects/raw2-3-2x.jpg 2x
+                    "
+                    media="(min-width: 1158px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw2-3-tab-1x.jpg 1x,
+                      ./images/projects/raw2-3-tab-2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/projects/raw2-3-mob-1x.jpg 1x,
+                      ./images/projects/raw2-3-mob-2x.jpg 2x
+                    "
+                    media="(max-width: 768px)"
+                  />
+                  <img
+                    src="./images/projects/raw2-3.jpg"
+                    alt="Online Courses"
+                    width="360"
+                  />
+                </picture>
 
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
