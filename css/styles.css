@@ -700,7 +700,7 @@ ul {
   .project-list {
     gap: 48px 24px;
   }
-  project-item {
+  .project-item {
     width: calc((100% - 24px * 2) / 3);
   }
 }
