@@ -194,7 +194,13 @@ ul {
   .adress-list {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 12px;
+  }
+  .adress-link {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
   }
 
   .menu-open-btn {
@@ -234,18 +240,23 @@ ul {
   top: 0;
   left: 0;
   z-index: 1;
-  padding: 72px 24px 40px 16px;
-  width: 100%;
-  height: 100%;
+  padding: 24px 24px 40px 16px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   overflow: auto;
+  justify-content: space-between;
 
   opacity: 0;
   visibility: hidden;
-  pointer-events: auto;
+  pointer-events: none;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-menu.is-open {
+  opacity: 1;
+  visibility: visible;
 }
 
 .menu-close-btn {
@@ -262,8 +273,12 @@ ul {
   height: 24px;
 
   margin-left: auto;
-  margin-top: 24px;
   margin-bottom: 24px;
+}
+
+.mob-menu-list {
+  display: flex;
+  flex-direction: column;
 }
 
 .mob-menu-link {
@@ -279,10 +294,8 @@ ul {
   margin-bottom: 40px;
 }
 
-.mob-adress {
-}
-
 .mob-adress-list {
+  margin-bottom: 48px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -298,8 +311,20 @@ ul {
 }
 .mob-social-list {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
 }
+
+.social-box.mobile {
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .mob-menu {
+    display: none;
+  }
+}
+
 /**
   |============================
   | hero
@@ -853,6 +878,7 @@ ul {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+  align-items: center;
 }
 .label-email {
   margin-bottom: 16px;
@@ -877,7 +903,7 @@ ul {
 }
 
 .email-button {
-  min-width: 165px;
+  width: 165px;
   height: 40px;
   display: flex;
   border: none;
@@ -900,18 +926,31 @@ ul {
 
 @media screen and (min-width: 768px) {
   .footer-container {
+    max-width: 584px;
     display: flex;
     flex-wrap: wrap;
     gap: 72px 24px;
+    justify-content: flex-start;
   }
+
   .footer-logo-box {
     flex-direction: column;
+    padding: 0;
+    margin: 0;
   }
+
+  .footer-text {
+    max-width: 264px;
+  }
+
   .social-box {
     flex-direction: column;
+    margin-bottom: 0;
   }
   .email-box {
-    flex-direction: column;
+    display: block;
+    align-items: baseline;
+    margin: 0;
   }
   .email-form {
     display: flex;
@@ -919,31 +958,36 @@ ul {
     flex-direction: row;
   }
   .label-email {
-    margin-right: 16px;
+    margin-right: 24px;
     margin-bottom: 0;
   }
 }
 
 @media screen and (min-width: 1158px) {
   .footer-container {
+    max-width: 1158px;
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
+    margin: 0;
+    gap: 0;
+    padding-left: 15px;
   }
   .footer-logo-box {
-    margin-right: 60px;
+    margin-right: 120px;
   }
   .social-box {
     display: inline-block;
   }
   .email-box {
     align-items: flex-start;
-    margin-left: 40px;
+    margin-left: 80px;
   }
   .email-form {
     display: flex;
     flex-wrap: nowrap;
-    gap: 24px;
+
+    margin-bottom: 0;
   }
   .email-title {
     margin-bottom: 8px;
